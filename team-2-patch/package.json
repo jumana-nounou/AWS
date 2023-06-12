@@ -1,0 +1,15 @@
+{
+  "name": "team-2-patch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+    "aws-sdk": "^2.1385.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

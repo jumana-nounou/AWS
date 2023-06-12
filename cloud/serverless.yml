@@ -1,0 +1,23 @@
+service: team-2-sqs
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+      Resource: "arn:aws:dynamodb:us-east-1:262081456511:table/team-2"
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+      Resource: "arn:aws:s3:::team-2-sqs-dev-serverlessdeploymentbucket-bp487tqncjk6/*"
+
+functions:
+  processObject:
+    handler: handler.processObject
+    events:
+      - sqs:
+          arn: arn:aws:sqs:us-east-1:262081456511:TQueue
+          batchSize: 10

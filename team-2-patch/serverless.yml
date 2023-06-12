@@ -1,0 +1,23 @@
+service: team-2-updateOrder
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:UpdateItem 
+      Resource: "arn:aws:dynamodb:us-east-1:262081456511:table/team-2"
+    - Effect: Allow 
+      Action:
+        - sns:Publish
+      Resource: "arn:aws:sns:us-east-1:262081456511:team-2-orders"
+functions:
+  updateItem:
+    handler: handler.updateItem
+    events:
+      - http:
+          path: updateItem
+          method: PATCH
+       
+

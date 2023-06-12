@@ -1,0 +1,14 @@
+service: api-gateway-sns
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  publishMessage:
+    handler: handler.publishMessage
+    events:
+      - http:
+          method: POST
+          path: publishMessage

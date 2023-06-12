@@ -1,0 +1,16 @@
+{
+  "name": "team-2-sqs-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "start": "node ../test.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1385.0",
+    "uuidv4": "6.2.13"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

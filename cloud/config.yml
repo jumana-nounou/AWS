@@ -1,0 +1,2 @@
+# ENV: dev
+# SQS_NEW_ORDER_ARN: aws:sqs:us-east-1:262081456511:TQueue
